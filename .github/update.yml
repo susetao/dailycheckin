@@ -1,0 +1,7 @@
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/Sitoi/dailycheckin.git"
+          source_branch: "main"
+          destination_branch: "main"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
